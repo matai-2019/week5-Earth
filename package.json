@@ -11,7 +11,8 @@
     "dev": "node server & webpack --watch",
     "server": "node server",
     "start": "webpack && node server",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "dbreset": "rm -f dev.sqlite3 && npx knex migrate:latest && npx knex seed:run"
   },
   "babel": {
     "presets": [
@@ -30,6 +31,8 @@
   },
   "dependencies": {
     "express": "^4.16.4",
+    "knex": "^0.18.0",
+    "sqlite3": "^4.0.9",
     "superagent": "^5.0.2"
   },
   "devDependencies": {
