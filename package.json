@@ -11,7 +11,8 @@
     "dev": "node server & webpack --watch",
     "server": "node server",
     "start": "webpack && node server",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "dbreset": "rm -f dev.sqlite3 && npx knex migrate:latest && npx knex seed:run"
   },
   "babel": {
     "presets": [
@@ -29,8 +30,19 @@
     ]
   },
   "dependencies": {
+    "@material-ui/core": "^4.0.0-rc.0",
+    "@material-ui/icons": "^4.2.1",
     "express": "^4.16.4",
-    "superagent": "^5.0.2"
+    "material-ui-icons": "^1.0.0-beta.36",
+    "cors": "^2.8.5",
+    "knex": "^0.18.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "superagent": "^5.0.2",
+    "webpack-node-externals": "^1.7.2",
+    "react-xml-parser": "^1.1.2",
+    "sqlite3": "^4.0.9",
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -44,8 +56,7 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "jest": "^24.7.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "sqlite3": "^4.0.9",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
