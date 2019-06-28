@@ -8,8 +8,8 @@ const { getSongs } = require('../db')
 
 const songURL = 'http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?'
 let currentURL = ''
-// const letsGroove = 'http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=earth fire and wind&song=lets groove'
-// const boogieWonderland = 'http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=earth fire and wind&song=boogie wonderland'
+const letsGroove = 'http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=earth fire and wind&song=lets groove'
+const boogieWonderland = 'http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=earth fire and wind&song=boogie wonderland'
 
 router.get('/api', (req, res) => {
   getSongs('lets groove')
