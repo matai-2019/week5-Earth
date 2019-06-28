@@ -1,40 +1,66 @@
-import React from 'react'
+import React from 'react';
+import Container from '@material-ui/core/Container';
 import { getSeptember, getLetsGroove, getBoogie } from '../api'
 
+import Header from './Header'
+import Player from './Player'
+import LyricDisplay from './LyricDisplay';
+
 export default class App extends React.Component {
-  state = {
-    text: null
-  }
-
-  componentDidMount () {
-    getSeptember(this.ourCallback)
-    getLetsGroove(this.ourCallback)
-    getBoogie(this.ourCallback)
-  }
-
-  ourCallback = (err, data) => {
-    if (err) {
-      console.log(err)
-    } else {
-      console.log(data)
-      return data // data is a string
+  constructor () {
+    super()
+    this.state = {
+      song: null
     }
   }
 
-  song = getSeptember(this.ourCallback)
+  // componentDidMount () {
+  //   getSeptember(this.ourCallback)
+  //   getLetsGroove(this.ourCallback)
+  //   getBoogie(this.ourCallback)
+  // }
 
-  handleClick = (e) => {
-    this.setState({
-      text: this.song
-    })
-  }
+  // ourCallback = (err, data) => {
+  //   if (err) {
+  //     console.log(err)
+  //   } else {
+  //     this.setState({
+  //       song: data
+  //     }, () => {
+  //       console.log(this.state)
+  //     })
+  //   }
+  // }
+
+  // sth = () => {
+  //   return getSeptember(this.ourCallback)
+  // }
+
+  // handleClick = () => {
+
+  // }
+
+  // render () {
+  //   return (
+  //     <>
+  //       <button onClick={getSeptember(this.ourCallback)}>September</button>
+  //       <p>{this.state.text}</p>
+  //     </>
+
+  // } 
 
   render () {
-    return (
-      <>
-        <button onClick={getSeptember(this.ourCallback)}>September</button>
-        <p>{this.state.text}</p>
-      </>
+    return (<>
+      <Container maxWidth="md">
+        <Header songName ={this.state.song}/>
+        <h1>React development has begun!</h1>
+        <Player />
+        <LyricDisplay />
+        {/* <div>{this.state.song}</div>
+        <button onClick={this.handleClick}>click</button> */}
+      </Container>
+    </>
+
     )
   }
 }
