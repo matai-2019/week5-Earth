@@ -1,5 +1,9 @@
-import React from 'react'
+import React from 'react';
+import Container from '@material-ui/core/Container';
 import { getSeptember } from '../api'
+
+import Header from './Header'
+import Player from './Player'
 
 export default class App extends React.Component {
 
@@ -13,11 +17,16 @@ export default class App extends React.Component {
     } else {
       console.log(data)
     }
-  }
-
-  render () {
-    return (
-      <h1>React development has begun!</h1>
-    )
-  }
+  } {
+    
+  return (
+    <>
+    <Container maxWidth="md">
+    <Header />
+    <h1>React development has begun!</h1>
+    <Player />
+    </Container>
+    </>
+  )
 }
+
