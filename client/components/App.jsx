@@ -4,6 +4,7 @@ import { getSeptember } from '../api'
 
 import Header from './Header'
 import Player from './Player'
+import LyricDisplay from './LyricDisplay'
 
 export default class App extends React.Component {
 
@@ -23,8 +24,10 @@ export default class App extends React.Component {
     return (<>
     <Container maxWidth="md">
     <Header />
-    <h1>React development has begun!</h1>
+    <br></br>
     <Player />
+    <br></br>
+    <LyricDisplay />
     </Container>
     </>
     )
