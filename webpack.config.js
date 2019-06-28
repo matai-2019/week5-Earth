@@ -1,5 +1,4 @@
 const path = require('path')
-const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
   entry: './client/index.js',
@@ -15,7 +14,6 @@ module.exports = {
       exclude: /node_modules/
     }]
   },
-  // externals: [nodeExternals()],
   resolve: {
     extensions: ['.js', '.jsx']
   },
