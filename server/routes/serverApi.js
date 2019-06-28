@@ -1,5 +1,6 @@
 const express = require('express')
 const request = require('superagent')
+const convert = require('xml-js')
 
 const router = express.Router()
 
@@ -11,8 +12,10 @@ router.get('/s', (req, res) => {
   request
     .get(september)
     .then(septemberRes => {
-      console.log(septemberRes.text)
-      res.send(septemberRes.text)
+      // eslint-disable-next-line standard/object-curly-even-spacing
+      const data = convert.xml2js(septemberRes.text, { compact: true, spaces: 4 })
+      console.log(data.GetLyricResult.Lyric._text)
+      res.send(data.GetLyricResult.Lyric._text)
     })
     .catch(err => console.error(err))
 })
