@@ -30,30 +30,15 @@
     ]
   },
   "dependencies": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b3b4448a4805122176d44c504e5dc54b5a4ac2d8
     "@material-ui/core": "^4.0.0-rc.0",
     "@material-ui/icons": "^4.2.1",
     "express": "^4.16.4",
-    "material-ui-icons": "^1.0.0-beta.36",
-<<<<<<< HEAD
-=======
-=======
->>>>>>> b3b4448a4805122176d44c504e5dc54b5a4ac2d8
     "cors": "^2.8.5",
-    "express": "^4.16.4",
     "knex": "^0.18.0",
     "react-xml-parser": "^1.1.2",
     "sqlite3": "^4.0.9",
-<<<<<<< HEAD
->>>>>>> d45f9006e198dfffe707afb1019c6513c7b9e5f8
-    "superagent": "^5.0.2"
-=======
     "superagent": "^5.0.2",
     "xml-js": "^1.6.11"
->>>>>>> b3b4448a4805122176d44c504e5dc54b5a4ac2d8
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
