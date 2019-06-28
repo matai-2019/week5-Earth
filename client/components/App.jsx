@@ -17,16 +17,17 @@ export default class App extends React.Component {
     } else {
       console.log(data)
     }
-  } {
-    
-  return (
-    <>
+  } 
+  
+  render () {
+    return (<>
     <Container maxWidth="md">
     <Header />
     <h1>React development has begun!</h1>
-    <Player />
+    {/* <Player /> */}
     </Container>
     </>
-  )
+    )
+  }
 }
 
