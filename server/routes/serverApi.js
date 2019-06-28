@@ -4,20 +4,29 @@ const convert = require('xml-js')
 
 const router = express.Router()
 
-const september = 'http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=earth fire and wind&song=september'
+const { getSongs } = require('../db')
+
+const songURL = 'http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?'
+let currentURL = ''
 // const letsGroove = 'http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=earth fire and wind&song=lets groove'
 // const boogieWonderland = 'http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=earth fire and wind&song=boogie wonderland'
 
-router.get('/s', (req, res) => {
-  request
-    .get(september)
-    .then(septemberRes => {
-      // eslint-disable-next-line standard/object-curly-even-spacing
-      const data = convert.xml2js(septemberRes.text, { compact: true, spaces: 4 })
-      console.log(data.GetLyricResult.Lyric._text)
-      res.send(data.GetLyricResult.Lyric._text)
-    })
-    .catch(err => console.error(err))
+router.get('/api', (req, res) => {
+  getSongs('lets groove')
+    .then(songData => {
+      console.log(songData)
+      currentURL = `artist=${songData.artist}&song=${songData.title}`
+      let APIURL = songURL + currentURL
+      request
+        .get(APIURL)
+        .then(apiRes => {
+          // eslint-disable-next-line standard/object-curly-even-spacing
+          const data = convert.xml2js(apiRes.text, { compact: true, spaces: 4 })
+          console.log(data.GetLyricResult.Lyric._text)
+          res.send(data.GetLyricResult.Lyric._text)
+        })
+        .catch(err => console.error(err))
+        })
 })
 
 module.exports = router

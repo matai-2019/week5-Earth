@@ -1,6 +1,6 @@
-import React from 'react';
-import Container from '@material-ui/core/Container';
-import { getSeptember } from '../api'
+import React from 'react'
+import Container from '@material-ui/core/Container'
+import { getSongLyrics } from '../api'
 
 import Header from './Header'
 import Player from './Player'
@@ -9,7 +9,7 @@ import LyricDisplay from './LyricDisplay'
 export default class App extends React.Component {
 
   componentDidMount () {
-    getSeptember(this.ourCallback)
+    getSongLyrics(this.ourCallback)
   }
 
   ourCallback = (err, data) => {
@@ -18,19 +18,18 @@ export default class App extends React.Component {
     } else {
       console.log(data)
     }
-  } 
-  
+  }
+
   render () {
     return (<>
     <Container maxWidth="md">
-    <Header />
-    <br></br>
-    <Player />
-    <br></br>
-    <LyricDisplay />
+      <Header />
+      <br></br>
+      <Player />
+      <br></br>
+      <LyricDisplay />
     </Container>
     </>
     )
   }
 }
-
