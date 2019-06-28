@@ -4,6 +4,7 @@ import { getSongLyrics } from '../api'
 
 import Header from './Header'
 import Player from './Player'
+import LyricDisplay from './LyricDisplay'
 
 export default class App extends React.Component {
 
@@ -21,12 +22,14 @@ export default class App extends React.Component {
 
   render () {
     return (<>
-      <Container maxWidth="md">
-        <Header />
-        <h1>React development has begun!</h1>
-        <Player />
-      </Container>
-      </>
+    <Container maxWidth="md">
+      <Header />
+      <br></br>
+      <Player />
+      <br></br>
+      <LyricDisplay />
+    </Container>
+    </>
     )
   }
 }
