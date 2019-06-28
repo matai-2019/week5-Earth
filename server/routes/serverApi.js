@@ -29,4 +29,28 @@ router.get('/api', (req, res) => {
         })
 })
 
+router.get('/g', (req, res) => {
+  request
+    .get(letsGroove)
+    .then(letsGrooveRes => {
+      // eslint-disable-next-line standard/object-curly-even-spacing
+      const data = convert.xml2js(letsGrooveRes.text, { compact: true, spaces: 4 })
+      console.log(data.GetLyricResult.Lyric._text)
+      res.send(data.GetLyricResult.Lyric._text)
+    })
+    .catch(err => console.error(err))
+})
+
+router.get('/b', (req, res) => {
+  request
+    .get(boogieWonderland)
+    .then(boogieWonderlandRes => {
+      // eslint-disable-next-line standard/object-curly-even-spacing
+      const data = convert.xml2js(boogieWonderlandRes.text, { compact: true, spaces: 4 })
+      console.log(data.GetLyricResult.Lyric._text)
+      res.send(data.GetLyricResult.Lyric._text)
+    })
+    .catch(err => console.error(err))
+})
+
 module.exports = router
