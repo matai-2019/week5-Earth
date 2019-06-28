@@ -62,24 +62,13 @@ export default function LyricDisplay() {
 
   return (
     <Card className={classes.card}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="http://placekitten.com/200/200"
-          title="Contemplative Reptile"
-        />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            across all continents except Antarctica,Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except AntarcticaLizards are a widespread group of squamate reptiles, with over 6,000 
           </Typography>
         </CardContent>
-      </CardActionArea>
-      <CardActions>
-      </CardActions>
     </Card>
   );
 }
