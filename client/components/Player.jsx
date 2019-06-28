@@ -12,7 +12,7 @@ import { relative } from 'path';
 const useStyles = makeStyles({
   card: {
     maxWidth: 1200,
-    position: relative,
+    position: "relative",
   },
   media: {
     height: 140,

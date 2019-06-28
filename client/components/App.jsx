@@ -24,7 +24,7 @@ export default class App extends React.Component {
     <Container maxWidth="md">
     <Header />
     <h1>React development has begun!</h1>
-    {/* <Player /> */}
+    <Player />
     </Container>
     </>
     )
