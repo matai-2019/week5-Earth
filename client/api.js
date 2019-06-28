@@ -1,23 +1,10 @@
 import request from 'superagent'
+// const september = 'http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=earth fire and wind&song=september'
+// const letsGroove = 'http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=earth fire and wind&song=lets groove'
+// const boogieWonderland = 'http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=earth fire and wind&song=boogie wonderland'
 
-export function getSeptember (callback) {
-  return request.get('http://localhost:3000/s')
-    .end((err, res) => {
-      callback(err, res.text)
-      if (err) console.log(err)
-    })
-}
-
-export function getLetsGroove (callback) {
-  return request.get('http://localhost:3000/g')
-    .end((err, res) => {
-      callback(err, res.text)
-      if (err) console.log(err)
-    })
-}
-
-export function getBoogie (callback) {
-  return request.get('http://localhost:3000/b')
+export function getSongLyrics (callback) {
+  return request.get('http://localhost:3000/api')
     .end((err, res) => {
       callback(err, res.text)
       if (err) console.log(err)
