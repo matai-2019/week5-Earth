@@ -2,7 +2,9 @@ import React from 'react'
 import { getSeptember, getLetsGroove, getBoogie } from '../api'
 
 export default class App extends React.Component {
-
+  state = {
+    text: null
+  }
 
   componentDidMount () {
     getSeptember(this.ourCallback)
@@ -15,21 +17,23 @@ export default class App extends React.Component {
       console.log(err)
     } else {
       console.log(data)
-      console.log(typeof data)
+      return data // data is a string
     }
   }
 
-  handleClick = () => {
-    getSeptember(this.ourCallback)
+  song = getSeptember(this.ourCallback)
+
+  handleClick = (e) => {
+    this.setState({
+      text: this.song
+    })
   }
-
-
 
   render () {
     return (
       <>
-      <button onClick={this.handleClick}>September</button>
-      <h1>React development has begun!</h1>
+        <button onClick={getSeptember(this.ourCallback)}>September</button>
+        <p>{this.state.text}</p>
       </>
     )
   }
