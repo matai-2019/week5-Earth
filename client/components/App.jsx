@@ -1,10 +1,24 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
+import { getSeptember } from '../api'
 
 import Header from './Header'
 import Player from './Player'
 
-const App = () => {
+export default class App extends React.Component {
+
+  componentDidMount () {
+    getSeptember(this.ourCallback)
+  }
+
+  ourCallback = (err, data) => {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log(data)
+    }
+  } {
+    
   return (
     <>
     <Container maxWidth="md">
@@ -16,4 +30,3 @@ const App = () => {
   )
 }
 
-export default App
